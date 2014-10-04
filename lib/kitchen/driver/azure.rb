@@ -138,7 +138,7 @@ module Kitchen
         cert_file = File.join(config[:kitchen_root], %w{.kitchen kitchen-azure}, 'management_cert.pfx')
 
         FileUtils.mkdir_p(File.join(config[:kitchen_root], %w{.kitchen kitchen-azure}))
-        File.open(cert_file,"w") do |f|
+        File.open(cert_file,"w",0600) do |f|
           f.write(cert)
         end
 
