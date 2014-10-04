@@ -127,6 +127,7 @@ module Kitchen
           sub_data = settings.xpath("//Subscription").find{ |s| s.attributes['Name'].value == config[:subscription]}
           raise "Couldn't find subscription" unless sub_data
           cert = sub_data['ManagementCertificate']
+          cert = settings.xpath("//PublishProfile")[0].attributes['ManagementCertificate'].value unless cert
           raise "Couldn't parse certificate" unless cert
           sub_id = sub_data['Id']
           raise "Couldn't get Subscription Id" unless sub_id
