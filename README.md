@@ -45,12 +45,14 @@ Below is a list of the configuration options, their obligatoriness and defaults
 * ### <a name="config-pub-settings"></a> publish_settings_file
 **Required** Path to publish settings file
   Either specify as an environment variable `PUBLISH_SETTINGS_FILE=/path/to/file`
-or in the .kitchen.yml file
+or in the .kitchen.yml file. This file can be downloaded here: 
+https://manage.windowsazure.com/publishsettings/index?client=xplat
 
 * ### <a name="config-subscription"></a> subscription
 **Required** Name of Azure subscription
   Either specify as an environment variable `SUBSCRIPTION=SubscriptionName`
-or in the .kitchen.yml file
+or in the .kitchen.yml file. Your publishsettings file will 
+have one or more subscriptions. This sring must match the one you wish to use.
 
 * ### <a name="config-subscription"></a> storage_account
 **Required** Name of the storage account to use
